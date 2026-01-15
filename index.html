@@ -1,123 +1,92 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Camila Walton – Diseñadora Gráfica & UX/UI</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camila Walton · Portfolio</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* RESET */
+    :root {
+      --cream-hero: #f6f1ea;
+      --text-main: #1f1f1f;
+      --text-soft: #5f5f5f;
+      --accent: #8b6f52;
+      --card-bg: #ffffff;
+      --border-soft: rgba(0,0,0,0.05);
+    }
+
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      color: #1f1f1f;
-      background-color: #ffffff;
+      color: var(--text-main);
+      background: #ffffff;
+      line-height: 1.6;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
     }
 
     a {
+      color: var(--accent);
       text-decoration: none;
-      color: inherit;
     }
 
-    /* HERO */
-    .hero {
-      padding: 120px 0 80px;
-      background-color: #ffffff;
-    }
+    /* ---------- LAYOUT ---------- */
 
-    .hero-inner {
-      max-width: 1100px;
+    .container {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 32px;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    /* ---------- HERO ---------- */
+
+    .hero {
+      background: var(--cream-hero);
+      padding: 100px 0 90px;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: 60% 40%;
-      gap: 48px;
-      align-items: center;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .hero-left h1 {
-      font-family: 'Playfair Display', serif;
+    .hero h1 {
       font-size: 56px;
-      font-weight: 500;
-      margin-bottom: 16px;
+      margin-bottom: 12px;
     }
 
-    .hero-line {
-      width: 48px;
-      height: 1px;
-      background-color: #c9b79d;
+    .hero .role {
+      color: var(--accent);
+      font-weight: 500;
       margin-bottom: 20px;
     }
 
-    .hero-left h2 {
-      font-size: 18px;
-      font-weight: 500;
-      color: #8a6f4e;
-      margin-bottom: 20px;
+    .hero p {
+      max-width: 520px;
+      color: var(--text-soft);
     }
 
-    .hero-left p {
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 420px;
-    }
-
-    .hero-manifesto {
+    .hero-right p {
       font-family: 'Playfair Display', serif;
       font-size: 22px;
       line-height: 1.4;
-      margin-bottom: 28px;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .hero-tags span {
-      padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid #e3d9c9;
-      font-size: 13px;
-    }
-
-    /* SOBRE MI */
-    .section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px;
-    }
-
-    .section h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      margin-bottom: 32px;
-    }
-
-    .about {
-      display: grid;
-      grid-template-columns: 40% 60%;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .about p {
-      font-size: 16px;
-      line-height: 1.7;
       margin-bottom: 24px;
     }
 
@@ -127,17 +96,41 @@
       gap: 10px;
     }
 
-    .tags span {
+    .tag {
+      border: 1px solid var(--border-soft);
       padding: 6px 14px;
-      border-radius: 999px;
-      border: 1px solid #e3d9c9;
-      font-size: 13px;
+      border-radius: 20px;
+      font-size: 14px;
+      background: #fff;
     }
 
-    /* PROYECTOS */
-    .projects {
-      background-color: #ffffff;
-      padding-bottom: 100px;
+    /* ---------- SOBRE MI ---------- */
+
+    .about {
+      background: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    .about p {
+      color: var(--text-soft);
+      margin-bottom: 20px;
+    }
+
+    /* ---------- PROYECTOS ---------- */
+
+    .projects h2 {
+      margin-bottom: 48px;
     }
 
     .projects-grid {
@@ -147,131 +140,228 @@
     }
 
     .project-card {
-      background-color: #fff;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-      transition: transform 0.2s ease;
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .project-image {
-      border-radius: 14px;
-      overflow: hidden;
+    .project-card img {
+      width: 100%;
+      border-radius: 16px;
       margin-bottom: 20px;
-      background-color: #f3f3f3;
+      background: #f3f3f3;
     }
 
-    .project-card h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px;
-      margin-bottom: 10px;
+    .project-card h3 {
+      margin-bottom: 8px;
     }
 
     .project-card p {
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 14px;
+      color: var(--text-soft);
+      font-size: 15px;
+      margin-bottom: 12px;
     }
 
-    .project-card a {
-      font-size: 14px;
-      color: #8a6f4e;
-    }
+    /* ---------- CONTACTO ---------- */
 
-    /* FOOTER */
-    footer {
-      background-color: #f3eee6;
-      padding: 80px 24px;
+    .contact {
+      background: #f6f1ea;
       text-align: center;
+      padding: 80px 0;
     }
 
-    footer h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 32px;
-      margin-bottom: 16px;
-    }
-
-    footer p {
-      font-size: 14px;
+    .contact p {
       margin-bottom: 24px;
+      color: var(--text-soft);
     }
 
-    .btn {
+    .button {
       display: inline-block;
-      padding: 12px 28px;
-      border-radius: 999px;
-      background-color: #8a6f4e;
+      background: var(--accent);
       color: #fff;
-      font-size: 14px;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-weight: 500;
     }
 
-    /* RESPONSIVE */
+    /* ---------- RESPONSIVE ---------- */
+
     @media (max-width: 900px) {
-      .hero-inner,
-      .about,
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-left h1 {
-        font-size: 42px;
+      .hero h1 {
+        font-size: 44px;
       }
     }
   </style>
 </head>
-
 <body>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-left">
+    <div class="container hero-grid">
+      <div>
         <h1>Camila Walton</h1>
-        <div class="hero-line"></div>
-        <h2>Diseñadora Gráfica & UX/UI</h2>
+        <div class="role">Diseñadora Gráfica & UX/UI</div>
         <p>
-          Diseño visual y experiencias digitales con foco en marca, producto y detalle.
+          Diseño visual y experiencias digitales con foco en marca,
+          producto y detalle.
         </p>
       </div>
 
       <div class="hero-right">
-        <p class="hero-manifesto">
-          Diseño con sensibilidad estética,<br>
+        <p>
+          Diseño con sensibilidad estética,
           criterio visual y mirada estratégica.
         </p>
-
-        <div class="hero-tags">
-          <span>Diseño Gráfico</span>
-          <span>UX/UI</span>
-          <span>Branding</span>
-          <span>Diseño Editorial</span>
+        <div class="tags">
+          <span class="tag">Diseño Gráfico</span>
+          <span class="tag">UX/UI</span>
+          <span class="tag">Branding</span>
+          <span class="tag">Diseño Editorial</span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SOBRE MI -->
-  <section class="section">
-    <h3>Sobre mí</h3>
+  <section class="about">
+    <div class="container">
+      <h2>Sobre mí</h2>
+      <div class="about-grid">
+        <img src="IMG_9780.jpg" alt="Camila Walton">
+        <div>
+          <p>
+            Empecé estudiando Diseño Gráfico en la UBA y, a partir de ahí,
+            fui explorando distintos caminos dentro del diseño.
+          </p>
+          <p>
+            Un proyecto académico despertó mi interés por UX/UI y las
+            experiencias digitales. Actualmente me estoy formando en IA
+            y automatizaciones, con foco en cómo la tecnología puede
+            potenciar el diseño.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <div class="about">
-      <img src="IMG_9780.jpg" alt="Camila Walton">
+  <!-- PROYECTOS -->
+  <section class="projects">
+    <div class="container">
+      <h2>Proyectos</h2>
 
-      <div>
-        <p>
-          Empecé estudiando Diseño Gráfico en la UBA y, a partir de ahí, fui explorando distintos caminos dentro del diseño.
-          Un proyecto académico despertó mi interés por UX/UI y las experiencias digitales.
-        </p>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="lic-veggie.jpg" alt="Lic. Veggie">
+          <h3>Lic. Veggie</h3>
+          <p>Branding integral con identidad visual, web y contenido para redes.</p>
+          <a href="lic-veggie.pdf" target="_blank">Ver proyecto (PDF)</a>
+        </div>
 
-        <p>
-          Actualmente me estoy formando en IA y automatizaciones, con foco en cómo la tecnología puede simplificar procesos
-          y potenciar el diseño.
-        </p>
+        <div class="project-card">
+          <img src="mysterium.jpg" alt="Colección Mysterium">
+          <h3>Colección Mysterium</h3>
+          <p>Diseño editorial de saga literaria y portadas de libros.</p>
+          <a href="mysterium.pdf" target="_blank">Ver proyecto (PDF)</a>
+        </div>
 
-        <div class="tags">
-          <span>Diseño Gráfico</span>
-          <span>UX/UI</span>
+        <div class="project-card">
+          <img src="cafework.jpg" alt="CaféWork App">
+          <h3>CaféWork App</h3>
+          <p>App para encontrar y reservar cafeterías ideales para trabajar.</p>
+          <a href="cafework.pdf" target="_blank">Ver proyecto (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>
+        ncf.camila@gmail.com · +54 11 3121 6059 · Boulogne, Argentina
+      </p>
+      <a class="button" href="mailto:ncf.camila@gmail.com">Contactame</a>
+    </div>
+  </section>
+
+  /* ---------- ANIMACIONES ---------- */
+
+/* Animación base */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* HERO */
+.hero h1 {
+  animation: fadeUp 0.9s ease-out forwards;
+}
+
+.hero .role {
+  animation: fadeUp 0.9s ease-out forwards;
+  animation-delay: 0.1s;
+}
+
+.hero p {
+  animation: fadeUp 0.9s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+/* HERO right */
+.hero-right {
+  animation: fadeUp 1s ease-out forwards;
+  animation-delay: 0.25s;
+}
+
+/* ---------- PROYECTOS HOVER ---------- */
+
+.project-card {
+  transition: 
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.project-card img {
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- LINKS ---------- */
+
+.project-card a {
+  transition: opacity 0.3s ease;
+}
+
+.project-card a:hover {
+  opacity: 0.7;
+}
+
+
+</body>
+</html>
