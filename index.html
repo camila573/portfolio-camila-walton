@@ -1,36 +1,49 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Camila Walton — Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --cream: #f6f1e8;
+      --soft-cream: #f9f5ee;
+      --text: #2b2b2b;
+      --muted: #6f6f6f;
+      --accent: #9b7a55;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      color: #2b2b2b;
-      background: #fff;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.6;
     }
 
-    h1, h2, h3 {
+    h1, h2, h3, h4 {
       font-family: 'Playfair Display', serif;
     }
 
     .container {
       max-width: 1120px;
-      margin: auto;
+      margin: 0 auto;
       padding: 0 24px;
     }
 
     /* HERO */
     .hero {
-      background: #f6f1e8;
-      padding: 96px 0;
+      background: var(--cream);
+      padding: 96px 0 88px;
     }
 
     .hero-grid {
@@ -40,24 +53,30 @@
       align-items: center;
     }
 
-    h1 {
+    .hero h1 {
       font-size: 56px;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
 
-    h2 {
+    .hero h2 {
       font-size: 18px;
-      color: #9b7a55;
+      color: var(--accent);
       margin-bottom: 20px;
     }
 
-    .hero p {
+    .hero-text {
       max-width: 420px;
-      color: #6f6f6f;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+
+    .hero-claim {
+      font-size: 24px;
+      color: #5e5e5e;
+      max-width: 420px;
     }
 
     .tags {
-      margin-top: 24px;
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
@@ -71,14 +90,19 @@
       background: #fff;
     }
 
-    /* SECCIONES */
-    section {
-      padding: 112px 0;
+    /* SECTIONS */
+    .section {
+      padding: 120px 0;
+    }
+
+    .section-soft {
+      background: var(--soft-cream);
+      padding: 120px 0 150px;
     }
 
     .section-title {
       font-size: 36px;
-      margin-bottom: 56px;
+      margin-bottom: 64px;
     }
 
     /* ABOUT */
@@ -89,83 +113,107 @@
       align-items: start;
     }
 
-    .about-grid img {
+    .about-image img {
       width: 100%;
       height: 320px;
       object-fit: cover;
       object-position: center 35%;
       border-radius: 20px;
+      background: #eee;
     }
 
-    .about-grid p {
-      color: #6f6f6f;
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
       max-width: 420px;
     }
 
     /* PROJECTS */
-    .projects {
-      background: #f9f5ee;
-      padding-bottom: 140px;
-    }
-
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 40px;
     }
 
-    .card {
+    .project-card {
       background: #fff;
       border-radius: 20px;
       padding: 20px;
+      transition: transform .35s ease, box-shadow .35s ease;
     }
 
-    .card img {
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 44px rgba(0,0,0,0.08);
+    }
+
+    .project-card img {
       width: 100%;
+      height: 200px;
+      object-fit: cover;
       border-radius: 14px;
       margin-bottom: 16px;
+      background: #eee;
     }
 
-    .card h4 {
+    .project-card h4 {
       font-size: 22px;
       margin-bottom: 8px;
     }
 
-    .card p {
-      color: #6f6f6f;
+    .project-card p {
+      color: var(--muted);
       font-size: 14px;
+      margin-bottom: 14px;
     }
 
-    .card a {
-      color: #9b7a55;
+    .project-card a {
+      color: var(--accent);
       font-size: 14px;
       text-decoration: none;
     }
 
     /* FOOTER */
     footer {
-      background: #f6f1e8;
-      padding: 112px 0;
+      background: var(--cream);
+      padding: 120px 0;
       text-align: center;
     }
 
     footer h3 {
       font-size: 32px;
+      margin-bottom: 12px;
     }
 
     footer p {
-      color: #6f6f6f;
+      color: var(--muted);
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 24px;
-      background: #9b7a55;
-      color: #fff;
+      background: var(--accent);
+      color: white;
       padding: 12px 30px;
       border-radius: 999px;
       text-decoration: none;
       font-size: 14px;
+    }
+
+    /* MICRO ANIMATION */
+    .fade-in {
+      animation: fadeUp .9s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 900px) {
@@ -174,6 +222,10 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+
+      .hero h1 {
+        font-size: 44px;
+      }
     }
   </style>
 </head>
@@ -181,12 +233,11 @@
 <body>
 
 <section class="hero">
-  <div class="container hero-grid">
+  <div class="container hero-grid fade-in">
     <div>
       <h1>Camila Walton</h1>
       <h2>Diseñadora Gráfica & UX/UI</h2>
-      <p>Diseño visual y experiencias digitales con foco en marca, producto y detalle.</p>
-
+      <p class="hero-text">Diseño visual y experiencias digitales con foco en marca, producto y detalle.</p>
       <div class="tags">
         <span>Diseño Gráfico</span>
         <span>UX/UI</span>
@@ -194,20 +245,20 @@
         <span>Diseño Editorial</span>
       </div>
     </div>
-
-    <p style="font-size:26px; color:#5e5e5e; max-width:420px;">
+    <div class="hero-claim">
       Diseño con sensibilidad estética, criterio visual y mirada estratégica.
-    </p>
+    </div>
   </div>
 </section>
 
-<section>
+<section class="section">
   <div class="container">
     <h3 class="section-title">Sobre mí</h3>
-
-    <div class="about-grid">
-      <img src="profile.jpg" alt="Camila Walton">
-      <div>
+    <div class="about-grid fade-in">
+      <div class="about-image">
+        <img src="IMG_9780.jpg" alt="Camila Walton" loading="lazy">
+      </div>
+      <div class="about-text">
         <p>Empecé estudiando Diseño Gráfico en la UBA y fui explorando distintos caminos dentro del diseño.</p>
         <p>Actualmente me estoy formando en IA y automatizaciones, con foco en cómo la tecnología puede potenciar el diseño.</p>
       </div>
@@ -215,37 +266,36 @@
   </div>
 </section>
 
-<section class="projects">
+<section class="section section-soft">
   <div class="container">
     <h3 class="section-title">Proyectos</h3>
-
-    <div class="projects-grid">
-      <div class="card">
-        <img src="lic-veggie.jpg">
+    <div class="projects-grid fade-in">
+      <article class="project-card">
+        <img src="lic-veggie.jpg" alt="Lic Veggie" loading="lazy">
         <h4>Lic. Veggie</h4>
         <p>Branding integral con identidad visual, web y contenido para redes.</p>
         <a href="#">Ver proyecto (PDF)</a>
-      </div>
+      </article>
 
-      <div class="card">
-        <img src="mysterium.jpg">
+      <article class="project-card">
+        <img src="mysterium.jpg" alt="Colección Mysterium" loading="lazy">
         <h4>Colección Mysterium</h4>
         <p>Diseño editorial de saga literaria y portadas de libros.</p>
         <a href="#">Ver proyecto (PDF)</a>
-      </div>
+      </article>
 
-      <div class="card">
-        <img src="cafework.jpg">
+      <article class="project-card">
+        <img src="cafework.jpg" alt="CaféWork App" loading="lazy">
         <h4>CaféWork App</h4>
         <p>App para encontrar y reservar cafeterías ideales para trabajar.</p>
         <a href="#">Ver proyecto (PDF)</a>
-      </div>
+      </article>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
+  <div class="container fade-in">
     <h3>Contacto</h3>
     <p>ncf.camila@gmail.com · +54 11 3121 6059 · Boulogne, Argentina</p>
     <a class="btn" href="mailto:ncf.camila@gmail.com">Contactame</a>
