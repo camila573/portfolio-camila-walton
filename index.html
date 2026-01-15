@@ -3,103 +3,73 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Profesional – Camila Walton</title>
+  <title>Camila Walton · Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #F5F0E8;
+      --card: #FBF8F3;
       --accent: #8B7355;
       --text: #2E2A26;
       --soft: #D6CBBE;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      line-height: 1.55;
     }
 
     section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 56px 24px;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px;
     }
 
     h1, h2, h3 {
       font-family: 'EB Garamond', serif;
-      color: var(--text);
-    }
-
-    h1 {
-      font-size: 56px;
       font-weight: 500;
-      margin-bottom: 12px;
     }
 
-    h2 {
-      font-size: 36px;
-      margin-bottom: 32px;
-    }
+    h1 { font-size: 52px; }
+    h2 { font-size: 34px; margin-bottom: 24px; }
+    h3 { font-size: 22px; margin-bottom: 8px; }
 
-    h3 {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
+    p { font-size: 15px; }
 
-    p {
-      max-width: 680px;
-      margin-bottom: 24px;
-    }
-
+    /* HERO */
     .hero {
-      min-height: 70vh;
+      min-height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      gap: 8px;
-      animation: fadeUp 1s ease forwards;
+      gap: 10px;
     }
 
     .hero span {
-      font-size: 18px;
       color: var(--accent);
+      font-size: 17px;
     }
 
-    .tags {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 16px;
-    }
+    .hero p { max-width: 520px; }
 
-    .tag {
-      border: 1px solid var(--soft);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
-
+    /* ABOUT */
     .about {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 48px;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
       align-items: center;
     }
 
     .photo {
       width: 100%;
-      height: 420px;
-      border-radius: 20px;
+      height: 380px;
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.12);
     }
 
     .photo img {
@@ -108,77 +78,98 @@
       object-fit: cover;
     }
 
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .tag {
+      border: 1px solid var(--soft);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    /* PROJECTS */
     .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
     }
 
     .project {
-      background-color: rgba(255,255,255,0.4);
+      background-color: var(--card);
       border-radius: 18px;
-      padding: 20px;
-      transition: transform .3s ease, box-shadow .3s ease;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .25s ease, box-shadow .25s ease;
     }
 
     .project:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     }
 
-    .mockup {
+    .project img {
       width: 100%;
-      height: 200px;
-      background-color: var(--soft);
+      height: 180px;
+      object-fit: cover;
       border-radius: 14px;
-      margin-bottom: 20px;
+      margin-bottom: 14px;
     }
 
-    .contact {
-      text-align: center;
+    .project p { font-size: 14px; margin-bottom: 10px; }
+
+    .project a {
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 6px;
     }
+
+    .project a:hover { text-decoration: underline; }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+
+    .contact p { margin-bottom: 12px; }
 
     .contact a {
       display: inline-block;
-      margin-top: 20px;
-      padding: 14px 32px;
+      padding: 12px 30px;
+      border-radius: 28px;
       background-color: var(--accent);
       color: #fff;
-      border-radius: 30px;
       text-decoration: none;
-      transition: opacity .3s ease;
-    }
-
-    .contact a:hover {
-      opacity: 0.85;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px;
       font-size: 14px;
-      color: #6b635a;
     }
 
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 768px) {
-      h1 { font-size: 42px; }
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .projects { grid-template-columns: 1fr 1fr; }
       .about { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .projects { grid-template-columns: 1fr; }
+      h1 { font-size: 40px; }
     }
   </style>
 </head>
 <body>
 
+  <!-- HERO -->
   <section class="hero">
     <h1>Camila Walton</h1>
     <span>Diseñadora Gráfica & UX/UI</span>
-    <p style="margin-top:24px; max-width:520px; font-size:18px;">Diseño visual y experiencias digitales con foco en marca, producto y detalle. Combino diseño, tecnología y sensibilidad estética.</p>
+    <p>Diseño visual y experiencias digitales con foco en marca, producto y detalle. Combino diseño, tecnología y sensibilidad estética.</p>
   </section>
 
+  <!-- ABOUT -->
   <section>
     <h2>Sobre mí</h2>
     <div class="about">
@@ -186,78 +177,59 @@
         <img src="IMG_9780.jpg" alt="Camila Walton">
       </div>
       <div>
-        <p>Empecé estudiando Diseño Gráfico en la UBA, y desde ahí fui abriendo caminos. Por un proyecto en la facultad descubrí el diseño UX/UI y me encantó, así que hice un curso que me abrió la cabeza al mundo de las experiencias digitales. Ahora estoy aprendiendo sobre IA y automatizaciones, explorando cómo la tecnología puede ayudarnos a hacer las cosas más simples y eficientes. Sigo sumando herramientas, mezclando diseño, tecnología y curiosidad en el camino.</p>
+        <p>Empecé estudiando Diseño Gráfico en la UBA, y desde ahí fui abriendo caminos. Por un proyecto en la facultad descubrí el diseño UX/UI y me encantó. Hoy sigo formándome en IA y automatizaciones, explorando cómo la tecnología puede simplificar procesos y potenciar el diseño. Me interesa trabajar en proyectos donde convivan estética, funcionalidad y detalle.</p>
         <div class="tags">
           <div class="tag">Diseño Gráfico</div>
           <div class="tag">UX/UI</div>
+          <div class="tag">Diseño Editorial</div>
           <div class="tag">IA</div>
-          <div class="tag">Automatizaciones</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- PROJECTS -->
   <section>
     <h2>Proyectos</h2>
     <div class="projects">
 
       <div class="project">
-        <div class="mockup"></div>
-        <h3>CaféWork App</h3>
-        <p>App para encontrar y reservar cafeterías ideales para trabajar.</p>
-        <div class="tags">
-          <div class="tag">UX Research</div>
-          <div class="tag">UI Design</div>
-          <div class="tag">Prototipado</div>
-          <div class="tag">Mobile App</div>
-        </div>
-      </div>
-
-      <div class="project">
-        <div class="mockup"></div>
+        <img src="lic-veggie.jpg" alt="Lic. Veggie">
         <h3>Lic. Veggie</h3>
         <p>Branding integral con identidad visual, web y contenido para redes.</p>
-        <div class="tags">
-          <div class="tag">Branding</div>
-          <div class="tag">Identidad Visual</div>
-          <div class="tag">Web Design</div>
-          <div class="tag">Social Media</div>
-        </div>
+        <a href="lic-veggie.pdf" target="_blank">Ver proyecto (PDF)</a>
       </div>
 
       <div class="project">
-        <div class="mockup"></div>
+        <img src="mysterium.jpg" alt="Colección Mysterium">
         <h3>Colección Mysterium</h3>
         <p>Diseño editorial de saga literaria y portadas de libros.</p>
-        <div class="tags">
-          <div class="tag">Diseño Editorial</div>
-          <div class="tag">Portadas</div>
-        </div>
+        <a href="mysterium.pdf" target="_blank">Ver proyecto (PDF)</a>
       </div>
 
       <div class="project">
-        <div class="mockup"></div>
+        <img src="cafework.jpg" alt="CaféWork App">
+        <h3>CaféWork App</h3>
+        <p>App para encontrar y reservar cafeterías ideales para trabajar.</p>
+        <a href="cafework.pdf" target="_blank">Ver proyecto (PDF)</a>
+      </div>
+
+      <div class="project">
+        <img src="diccionario.jpg" alt="Diccionario Tecnológico">
         <h3>Diccionario Tecnológico</h3>
         <p>Diseño editorial y maquetación de contenido técnico.</p>
-        <div class="tags">
-          <div class="tag">Diseño Editorial</div>
-          <div class="tag">Maquetación</div>
-          <div class="tag">Ilustración</div>
-        </div>
+        <a href="diccionario.pdf" target="_blank">Ver proyecto (PDF)</a>
       </div>
 
     </div>
   </section>
 
+  <!-- CONTACT -->
   <section class="contact">
     <h2>Contacto</h2>
-    <p>📧 ncf.camila@gmail.com · 📱 +54 11 3121 6059 · 📍 Boulogne, Argentina</p>
+    <p>ncf.camila@gmail.com · +54 11 3121 6059 · Boulogne, Argentina</p>
     <a href="mailto:ncf.camila@gmail.com">Contactame</a>
   </section>
-
-  <footer>
-    Portfolio Profesional – Camila Walton · Postulación Carestino
-  </footer>
 
 </body>
 </html>
